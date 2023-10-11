@@ -34,6 +34,7 @@ if ($err) {
 ?>
 
 <?php
+
 $curl = curl_init();
 
 curl_setopt_array($curl, [
@@ -48,9 +49,12 @@ curl_setopt_array($curl, [
     'itemizedDetails' => [
         'isFee' => true
     ],
+    'notificationURL' => 'http://localhost/bitpayapi/bitpaywebhook.php',
+    'redirectURL' => 'http://localhost/bitpayapi/bitpayconfirm.php',
+    'closeURL' => 'http://localhost/bitpayapi/bitpaycancle.php',
     'token' => '3xTSoTKnmwBZnXe3o4TwxfZrtuDqWNPdevo8JkaP567c',
-    'price' => 0.00700,
-    'currency' => 'btc'
+    'currency' => 'usd',
+    'price' => 100
   ]),
   CURLOPT_HTTPHEADER => [
     "Content-Type: application/json",
